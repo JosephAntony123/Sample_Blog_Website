@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+  .panel {
+    margin-top: 20px;
+  }
+
+  .panel-heading {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: lightblue;
+    padding: 10px;
+  }
+
+  .panel-body {
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+
+  .img-thumbnail {
+    max-width: 200px;
+    max-height: 200px;
+  }
+</style>
+<div class="panel panel-default">
+  <div class="panel-heading">{{ post.heading }}</div>
+  <div class="panel-body">
+    <img
+      src="{{ post.cover_photo.url }}"
+      alt="Cover Photo"
+      class="img-thumbnail"
+    />
+    <h1>{{ post.heading }}</h1>
+    <p>{{ post.subheadings }}</p>
+    <p>{{ post.blog_text }}</p>
+    <p>Author: {{ post.author }}</p>
+    <p>Created On: {{ post.created_on }}</p>
+    <p>Conclusion: {{ post.conclusion }}</p>
+  </div>
+</div>
+{% endblock %}

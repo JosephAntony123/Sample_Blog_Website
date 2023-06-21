@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+  body {
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    max-width: 500px;
+    margin: 100px auto;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    animation: rotate 5s infinite linear;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #777;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+</style>
+
+<div class="container">
+  <h2>Logout</h2>
+  <p>You have been logged out.</p>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var container = document.querySelector(".container");
+    container.addEventListener("mouseover", function () {
+      this.style.animationPlayState = "paused";
+    });
+    container.addEventListener("mouseout", function () {
+      this.style.animationPlayState = "running";
+    });
+  });
+</script>
+{% endblock %}

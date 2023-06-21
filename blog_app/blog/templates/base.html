@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AdBlog</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      /* Custom styles */
+      body {
+        background-color: #f9f9f9;
+      }
+
+      .navbar {
+        background-color: #9e9090;
+        border-color: #e7e7e7;
+      }
+
+      .navbar-brand {
+        color: #333;
+      }
+
+      .navbar-brand:hover,
+      .navbar-brand:focus {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">AdBlog</a>
+        </div>
+        <ul class="nav navbar-nav">
+          {% if user.is_authenticated %}
+          <li><a href="/logout/">Logout</a></li>
+          {% else %}
+          <li><a href="/register/">Register</a></li>
+          <li><a href="/login/">Login</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+    <div class="container">{% block content %} {% endblock %}</div>
+
+    <!-- JavaScript libraries -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init(); // Initialize WOW.js for animations
+    </script>
+  </body>
+</html>
